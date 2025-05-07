@@ -1,0 +1,4 @@
+flask==2.0.1
+impacket==0.10.0
+requests==2.26.0
+python-cowsay==1.0.0  # For fun ASCII art

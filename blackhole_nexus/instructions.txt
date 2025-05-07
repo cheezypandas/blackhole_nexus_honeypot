@@ -1,0 +1,54 @@
+Steps to Start the Blackhole Nexus Honeypot System (WSL Setup)
+==============================================================
+
+0. Open your WSL terminal.
+   wsl --install -d Ubuntu
+   sudo apt update && sudo apt install -y python3 python3-pip git curl
+
+1. Navigate to the project directory:
+   cd "/mnt/host/c/users/sandi/OneDrive/Documents/GitHub Projects/blackhole_nexus"
+
+2. Refresh the docker:
+   docker compose -f honeypots/cowrie/docker-compose.yml down
+   docker compose -f honeypots/cowrie/docker-compose.yml up -d
+
+3. Activate the virtual environment:
+   source venv_linux/bin/activate
+
+4. (Optional but recommended) Install project requirements:
+  pip install -r requirements.txt
+
+
+5. Run the main honeypot controller UI:
+   python cli.py
+
+6. In the UI, use the number keys to:
+   [1] Start all honeypots
+   [2] Stop all honeypots
+   [3] View live logs
+   [4] Generate PDF report
+   [5] Open settings (future feature)
+   [Q] Quit
+7. Install WSL
+   If you're using Windows Subsystem for Linux (WSL), you may need to    install it. Run the following command:
+
+   sudo apt install wsl
+
+8. Fix Line-Endings in the setup.sh Script
+   If you encounter a bad interpreter: No such file or directory error due to Windows-style line endings in the setup.sh script, run this command to fix it:
+
+   sed -i 's/\r$//' setup.sh
+
+9. Make the Script Executable
+   chmod +x setup.sh
+   ./setup.sh
+
+10. Install flask after opening virtual environment.
+    source venv/bin/activate  # Or whatever your venv is called
+    pip install flask
+
+Notes:
+------
+- Make sure Docker is running in the background on your Windows host.
+- Ensure your WSL has access to Docker by configuring it properly (e.g., Docker Desktop WSL integration enabled).
+- If you run into port binding issues, verify no other service is using those ports (2222, 445, 8080).

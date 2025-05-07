@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  cowrie:
+    image: cowrie/cowrie
+    ports:
+      - "2222:2222"    # SSH
+      - "2223:2223"    # Telnet
+    volumes:
+    - ./logs:/cowrie/log
