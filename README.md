@@ -1,5 +1,7 @@
 # blackhole_nexus_honeypot
 
+! See the images file for practical usage.
+
 Blackhole Nexus is an advanced honeypot detection system. The primary goal of this project is to explore the role of honeypots in modern threat detection, honeypot data analysis, and threat intelligence enrichment. By simulating vulnerable systems, Blackhole Nexus is designed to attract and deceive attackers, offering valuable insights into their tactics and methodologies while protecting critical network resources.
 
 Honeypots serve as a proactive measure in cybersecurity by luring attackers into controlled environments where their actions can be closely monitored. This approach allows defenders to gather critical data on the tools, techniques, and procedures (TTPs) used by adversaries, without risking real systems or data. Blackhole Nexus integrates several types of honeypots, including SSH, Telnet, SMB, and WebDAV, and supports various security features such as syscall hooks, threat intelligence integration, and automated logging. The system also includes an intuitive command-line interface for managing honeypots and reviewing captured data.
